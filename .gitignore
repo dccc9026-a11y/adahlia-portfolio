@@ -1,0 +1,11 @@
+# Raw client source files (large originals; the site uses optimized copies in assets/)
+homepage/
+Case study 1/
+Case Study 2 hair brands/
+Case Study 3 allentown media/
+
+# Local tooling
+.claude/
+.impeccable/
+.DS_Store
+Thumbs.db
