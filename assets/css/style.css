@@ -28,7 +28,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
 body {
   margin: 0;
   background: var(--cream);
@@ -325,7 +325,7 @@ em, .italic { font-style: italic; }
 .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
 .about-tags span { padding: 9px 18px; border-radius: 999px; border: 1px solid var(--line); font-size: 13.5px; font-weight: 600; background: #FBF8F3; }
 .about-tags span:nth-child(3n+1) { background: var(--blush-soft); border-color: transparent; }
-@media (max-width: 860px) { .about { grid-template-columns: 1fr; } .about-portrait { max-width: 380px; } }
+@media (max-width: 860px) { .about { grid-template-columns: 1fr; } .about-portrait { max-width: 380px; } .about-portrait::before { inset: 14px -12px -14px 12px; } }
 
 /* CTA */
 .cta { background: var(--burgundy); color: var(--cream); text-align: center; padding: clamp(110px, 14vw, 190px) 0; position: relative; overflow: hidden; }
