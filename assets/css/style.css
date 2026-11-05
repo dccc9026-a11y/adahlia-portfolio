@@ -303,9 +303,10 @@ em, .italic { font-style: italic; }
 .sample-role { display: block; font-size: 13.5px; color: var(--espresso-soft); }
 @media (max-width: 900px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) {
-  .gallery-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); gap: 24px; }
-  .gallery-tabs::-webkit-scrollbar { display: none; }
-  .gallery-tab { white-space: nowrap; }
+  /* all disciplines visible at once: two-column list instead of a scrolling row */
+  .gallery-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; border-bottom: 0; }
+  .gallery-tab { text-align: left; padding: 13px 0; font-size: 14.5px; border-bottom: 1px solid var(--line); }
+  .gallery-tab::after { bottom: -1px; }
   .gallery-grid { grid-template-columns: 1fr; }
 }
 
