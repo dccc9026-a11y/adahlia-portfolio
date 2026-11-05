@@ -1,6 +1,6 @@
 // Strategy to Execution: data-driven discipline tabs, preview grid and lightbox.
-// Content lives in assets/data/gallery.json. Add `?edit` to the page URL to preview local images in the lightbox
-// (temporary, never saved or uploaded).
+// Content lives in assets/data/gallery.json and is edited through Pages CMS (see .pages.yml).
+// Add `?edit` to the page URL to preview a local image in the lightbox before uploading it (temporary, never saved).
 (function () {
   const root = document.querySelector("[data-gallery]");
   const dialog = document.querySelector(".lightbox");
@@ -95,14 +95,20 @@
     }
   }
 
+  // CMS paths may come back site-absolute ("/assets/…"); the site lives under a subpath, so keep them relative
+  const asset = (p) => (p || "").replace(/^\/+/, "");
+  const isVideo = (item) => Boolean(item.video);
+
   function thumbSrc(item, key) {
-    return localPreviews[key] || (item.type === "video" ? item.poster : item.src);
+    return localPreviews[key] || asset(item.image);
   }
 
-  function buildGrid(ci) {
+  function buildGrid(ci, showAll) {
+    const frag = document.createDocumentFragment();
     const ul = document.createElement("ul");
     ul.className = "gallery-grid";
-    categories[ci].items.slice(0, 3).forEach((item, ii) => {
+    const items = categories[ci].items;
+    items.slice(0, showAll ? items.length : 3).forEach((item, ii) => {
       const key = `${ci}-${ii}`;
       const li = document.createElement("li");
       const btn = document.createElement("button");
@@ -110,10 +116,11 @@
       btn.className = "sample";
       btn.setAttribute("aria-haspopup", "dialog");
       const contain = item.fit === "contain" && !localPreviews[key];
+      const pos = /^[\w%.\s-]{1,40}$/.test(item.position || "") ? item.position : "";
       btn.innerHTML = `
         <span class="sample-media${contain ? " sample-media--contain" : ""}">
-          <img src="${thumbSrc(item, key)}" alt="${escapeAttr(item.alt)}" loading="lazy"${item.position ? ` style="object-position:${item.position}"` : ""}>
-          ${item.type === "video" && !localPreviews[key] ? `<span class="sample-play">${playIcon}Video</span>` : ""}
+          <img src="${escapeAttr(thumbSrc(item, key))}" alt="${escapeAttr(item.alt)}" loading="lazy"${pos ? ` style="object-position:${pos}"` : ""}>
+          ${isVideo(item) && !localPreviews[key] ? `<span class="sample-play">${playIcon}Video</span>` : ""}
         </span>
         <span class="sample-title">${escapeHtml(item.title)}</span>
         <span class="sample-role">${escapeHtml(item.role)}</span>`;
@@ -121,28 +128,41 @@
       li.appendChild(btn);
       ul.appendChild(li);
     });
-    return ul;
+    frag.appendChild(ul);
+    if (!showAll && items.length > 3) {
+      const more = document.createElement("button");
+      more.type = "button";
+      more.className = "gallery-more link-arrow";
+      more.textContent = `View all ${items.length} ${categories[ci].name.toLowerCase()} samples`;
+      more.addEventListener("click", () => {
+        panel.innerHTML = "";
+        panel.appendChild(buildGrid(ci, true));
+        panel.querySelectorAll(".sample")[3]?.focus();
+      });
+      frag.appendChild(more);
+    }
+    return frag;
   }
 
   function openLightbox(ci, ii, trigger) {
     opener = trigger || opener;
     open = [ci, ii];
     const cat = categories[ci];
-    const items = cat.items.slice(0, 3);
+    const items = cat.items;
     const item = items[ii];
     const key = `${ci}-${ii}`;
 
     stopMedia();
     lb.media.innerHTML = "";
-    if (localPreviews[key] || item.type === "image") {
+    if (localPreviews[key] || !isVideo(item)) {
       const img = document.createElement("img");
-      img.src = localPreviews[key] || item.src;
+      img.src = localPreviews[key] || asset(item.image);
       img.alt = item.alt;
       lb.media.appendChild(img);
     } else {
       const video = document.createElement("video");
-      video.src = item.src;
-      video.poster = item.poster || "";
+      video.src = asset(item.video);
+      video.poster = asset(item.image);
       video.playsInline = true;
       video.controls = true;
       video.setAttribute("aria-label", item.alt);
@@ -171,7 +191,7 @@
 
   function step(dir) {
     if (!open) return;
-    const n = categories[open[0]].items.slice(0, 3).length;
+    const n = categories[open[0]].items.length;
     openLightbox(open[0], (open[1] + dir + n) % n);
   }
 
@@ -214,9 +234,10 @@
     const [ci, ii] = open;
     openLightbox(ci, ii);
     if (ci === current) {
+      const expanded = panel.querySelectorAll(".sample").length > 3;
       panel.innerHTML = "";
-      panel.appendChild(buildGrid(ci));
-      opener = panel.querySelectorAll(".sample")[ii];
+      panel.appendChild(buildGrid(ci, expanded));
+      opener = panel.querySelectorAll(".sample")[ii] || opener;
     }
   });
 

@@ -291,6 +291,7 @@ em, .italic { font-style: italic; }
 .gallery-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 3vw, 44px); }
 .gallery-grid.is-swapping { opacity: 0; }
 .gallery-grid { transition: opacity .35s var(--ease); }
+.gallery-more { margin-top: clamp(32px, 4vw, 48px); background: none; border: 0; border-bottom: 1.5px solid currentColor; padding: 0 0 4px; cursor: pointer; font-family: var(--sans); }
 .sample { display: block; width: 100%; padding: 0; background: none; border: 0; text-align: left; cursor: zoom-in; color: inherit; font: inherit; }
 .sample-media { display: block; position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3.2; background: var(--sand-soft); margin-bottom: 18px; }
 .sample-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }

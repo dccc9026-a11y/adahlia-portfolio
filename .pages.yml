@@ -1,0 +1,114 @@
+# Pages CMS (https://pagescms.org) — lets Adahlia manage the Strategy to Execution gallery
+# from a web dashboard. Every save commits to this repo and GitHub Pages redeploys the site.
+#
+# Gallery rules (enforced by assets/js/gallery.js):
+# - A discipline with no samples is hidden on the site.
+# - Three samples show at a time; more appear behind a "View all" button.
+# - Video samples need an image too: it is the thumbnail shown before the video opens.
+
+media:
+  - name: images
+    label: Images
+    input: assets/img
+    output: assets/img
+    categories: [image]
+    rename: safe
+  - name: videos
+    label: Videos
+    input: assets/video
+    output: assets/video
+    extensions: [mp4, webm]
+    rename: safe
+
+content:
+  - name: gallery
+    label: Strategy to Execution gallery
+    type: file
+    path: assets/data/gallery.json
+    format: json
+    fields:
+      - name: categories
+        label: Disciplines
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: id
+            label: ID
+            type: string
+            description: Short lowercase code used in links (e.g. experiential). Do not change for existing disciplines.
+            required: true
+          - name: name
+            label: Tab name
+            type: string
+            required: true
+          - name: items
+            label: Samples
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: image
+                label: Image (or video thumbnail)
+                type: image
+                description: Shown as the preview. For a video, use a still frame from it. Use JPG, PNG or WebP under 1 MB.
+                required: true
+                options:
+                  media: images
+              - name: video
+                label: Video file (optional)
+                type: file
+                description: Leave empty for an image sample. MP4 under about 10 MB plays best.
+                options:
+                  media: videos
+              - name: title
+                label: Title
+                type: string
+                required: true
+              - name: caption
+                label: Caption
+                type: text
+                description: One sentence on what the work is.
+              - name: role
+                label: Role
+                type: string
+                description: e.g. Marketing & Communications Manager, CPN
+              - name: alt
+                label: Image description (alt text)
+                type: string
+                description: Describe what is in the image for screen-reader users.
+                required: true
+              - name: link
+                label: Related case study
+                type: select
+                options:
+                  values:
+                    - name: work/cpn.html
+                      label: CPN
+                    - name: work/hairmuse.html
+                      label: Hairmuse
+                    - name: work/allentown.html
+                      label: Allentown
+              - name: fit
+                label: Thumbnail framing
+                type: select
+                description: Fill crops the image to the frame; Show whole fits the entire image inside it.
+                default: cover
+                options:
+                  values:
+                    - name: cover
+                      label: Fill
+                    - name: contain
+                      label: Show whole
+              - name: position
+                label: Crop focus (advanced)
+                type: string
+                description: Optional CSS position such as "50% 30%" to choose which part of the image stays in view.
+              - name: audio
+                label: Video has sound
+                type: boolean
+                description: Turn on to show player controls with sound instead of a silent loop.

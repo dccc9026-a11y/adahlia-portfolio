@@ -1,20 +1,20 @@
 {
-  "_readme": "Strategy to Execution gallery. Each category shows up to three samples; categories with no items are hidden. Item fields: type (image|video), src, poster (video thumbnail), alt, title, caption, role, link (case study), fit (cover|contain), position (CSS object-position for the thumbnail), audio (true shows video controls with sound).",
   "categories": [
     {
       "id": "email",
       "name": "Email Marketing",
       "items": [
         {
-          "type": "video",
-          "src": "assets/video/cpn-newsletter.mp4",
-          "poster": "assets/img/cpn-newsletter-poster.webp",
-          "fit": "contain",
+          "image": "assets/img/cpn-newsletter-poster.webp",
+          "video": "assets/video/cpn-newsletter.mp4",
           "alt": "Scrolling through the CPN February newsletter on a phone",
           "title": "CPN monthly newsletter",
           "caption": "The February issue of the network's national newsletter, shown on mobile.",
           "role": "Marketing & Communications Manager, CPN",
-          "link": "work/cpn.html"
+          "link": "work/cpn.html",
+          "fit": "contain",
+          "position": "",
+          "audio": false
         }
       ]
     },
@@ -23,35 +23,40 @@
       "name": "Social & Content",
       "items": [
         {
-          "type": "video",
-          "src": "assets/video/allentown-social.mp4",
-          "poster": "assets/img/allentown-social-poster.webp",
-          "fit": "contain",
+          "image": "assets/img/allentown-social-poster.webp",
+          "video": "assets/video/allentown-social.mp4",
           "alt": "Allentown product marketing and event marketing posts shown on two phones",
           "title": "Product and event social content",
           "caption": "LinkedIn content for a specialized B2B audience, from product launches to event coverage.",
           "role": "Marketing & Digital Specialist, Allentown",
-          "link": "work/allentown.html"
+          "link": "work/allentown.html",
+          "fit": "contain",
+          "position": "",
+          "audio": false
         },
         {
-          "type": "video",
-          "src": "assets/video/hairmuse-process.mp4",
-          "poster": "assets/img/hairmuse-process-poster.webp",
-          "position": "50% 30%",
+          "image": "assets/img/hairmuse-process-poster.webp",
+          "video": "assets/video/hairmuse-process.mp4",
           "alt": "Sped-up video of a Hairmuse stylist taking down a braided style",
           "title": "Behind-the-scenes process content",
           "caption": "Short-form video that turned everyday salon work into engaging, brand-building content.",
           "role": "Content Marketing Manager, Hairmuse",
-          "link": "work/hairmuse.html"
+          "link": "work/hairmuse.html",
+          "fit": "cover",
+          "position": "50% 30%",
+          "audio": false
         },
         {
-          "type": "image",
-          "src": "assets/img/hairmuse-testimonial.webp",
+          "image": "assets/img/hairmuse-testimonial.webp",
+          "video": "",
           "alt": "Hairmuse branded five-star client testimonial post with a photo of finished braids",
           "title": "Client testimonial templates",
           "caption": "Branded social-proof posts built from real client reviews.",
           "role": "Content Marketing Manager, Hairmuse",
-          "link": "work/hairmuse.html"
+          "link": "work/hairmuse.html",
+          "fit": "cover",
+          "position": "",
+          "audio": false
         }
       ]
     },
@@ -60,32 +65,40 @@
       "name": "Brand Campaigns",
       "items": [
         {
-          "type": "image",
-          "src": "assets/img/cpn-identity-collage.webp",
+          "image": "assets/img/cpn-identity-collage.webp",
+          "video": "",
           "alt": "The CPN brand identity: logo variations, color palette, mascot, and applications on notebooks, tote bags, lanyards, banners, and apparel",
           "title": "CPN brand identity system",
           "caption": "One visual identity for 14 organizations, applied across print, digital, merchandise, and environments.",
           "role": "Marketing & Communications Manager, CPN",
-          "link": "work/cpn.html"
+          "link": "work/cpn.html",
+          "fit": "cover",
+          "position": "",
+          "audio": false
         },
         {
-          "type": "image",
-          "src": "assets/img/cpn-style-guide.webp",
+          "image": "assets/img/cpn-style-guide.webp",
+          "video": "",
           "alt": "The Interactive CPN Style Guide, showing the cover and the color palette spread",
           "title": "Interactive CPN Style Guide",
           "caption": "Shared guidelines that helped every partner communicate the brand consistently.",
           "role": "Marketing & Communications Manager, CPN",
-          "link": "work/cpn.html"
+          "link": "work/cpn.html",
+          "fit": "cover",
+          "position": "",
+          "audio": false
         },
         {
-          "type": "image",
-          "src": "assets/img/cpn-partners.webp",
-          "fit": "contain",
+          "image": "assets/img/cpn-partners.webp",
+          "video": "",
           "alt": "Logos of the 14 partner organizations flowing into the unified CPN mark",
           "title": "Fourteen partners, one network",
           "caption": "The brand architecture behind uniting 14 independent organizations.",
           "role": "Marketing & Communications Manager, CPN",
-          "link": "work/cpn.html"
+          "link": "work/cpn.html",
+          "fit": "contain",
+          "position": "",
+          "audio": false
         }
       ]
     },
@@ -94,36 +107,40 @@
       "name": "Digital & Web",
       "items": [
         {
-          "type": "video",
-          "src": "assets/video/allentown-kpi.mp4",
-          "poster": "assets/img/allentown-kpi-poster.webp",
-          "fit": "contain",
+          "image": "assets/img/allentown-kpi-poster.webp",
+          "video": "assets/video/allentown-kpi.mp4",
           "alt": "Animated LinkedIn performance dashboard shown on two monitors",
           "title": "Performance dashboard",
           "caption": "Reporting that tracked engagement, reach, and content performance over time.",
           "role": "Marketing & Digital Specialist, Allentown",
-          "link": "work/allentown.html"
+          "link": "work/allentown.html",
+          "fit": "contain",
+          "position": "",
+          "audio": false
         },
         {
-          "type": "image",
-          "src": "assets/img/allentown-linkedin-dashboard.webp",
-          "position": "50% 0%",
+          "image": "assets/img/allentown-linkedin-dashboard.webp",
+          "video": "",
           "alt": "LinkedIn analytics dashboard showing a 7.31% page engagement rate and top posts",
           "title": "Analytics and optimization",
           "caption": "Channel analytics used to refine content and campaign decisions.",
           "role": "Marketing & Digital Specialist, Allentown",
-          "link": "work/allentown.html"
+          "link": "work/allentown.html",
+          "fit": "cover",
+          "position": "50% 0%",
+          "audio": false
         },
         {
-          "type": "video",
-          "src": "assets/video/allentown-campaign-workflow.mp4",
-          "poster": "assets/img/allentown-campaign-workflow-poster.webp",
-          "audio": true,
+          "image": "assets/img/allentown-campaign-workflow-poster.webp",
+          "video": "assets/video/allentown-campaign-workflow.mp4",
           "alt": "Walkthrough of the Digital Campaign Initiatives Workflow presentation",
           "title": "Digital campaign workflow",
           "caption": "A step-by-step process for auditing digital presence and planning campaigns.",
           "role": "Marketing & Digital Specialist, Allentown",
-          "link": "work/allentown.html"
+          "link": "work/allentown.html",
+          "fit": "cover",
+          "position": "",
+          "audio": true
         }
       ]
     },
@@ -132,26 +149,28 @@
       "name": "Paid Media",
       "items": [
         {
-          "type": "video",
-          "src": "assets/video/allentown-sentinel-ad.mp4",
-          "poster": "assets/img/allentown-sentinel-ad-poster.webp",
-          "fit": "contain",
+          "image": "assets/img/allentown-sentinel-ad-poster.webp",
+          "video": "assets/video/allentown-sentinel-ad.mp4",
           "alt": "Animated ad for Sentinel colony health monitoring: over 25,000 animal lives saved and improved animal welfare",
           "title": "Animated campaign creative",
           "caption": "Animated creative highlighting the impact of Sentinel colony health monitoring.",
           "role": "Marketing & Digital Specialist, Allentown",
-          "link": "work/allentown.html"
+          "link": "work/allentown.html",
+          "fit": "contain",
+          "position": "",
+          "audio": false
         },
         {
-          "type": "video",
-          "src": "assets/video/allentown-strategy.mp4",
-          "poster": "assets/img/allentown-strategy-poster.webp",
-          "fit": "contain",
+          "image": "assets/img/allentown-strategy-poster.webp",
+          "video": "assets/video/allentown-strategy.mp4",
           "alt": "Strategy presentation slides cycling through research and planning, social media, and image ad examples",
           "title": "Campaign planning and ad concepts",
           "caption": "Planning slides covering research, channel strategy, and image ad examples.",
           "role": "Marketing & Digital Specialist, Allentown",
-          "link": "work/allentown.html"
+          "link": "work/allentown.html",
+          "fit": "contain",
+          "position": "",
+          "audio": false
         }
       ]
     },
@@ -160,34 +179,40 @@
       "name": "PR & Partnerships",
       "items": [
         {
-          "type": "image",
-          "src": "assets/img/hairmuse-nymag.webp",
-          "position": "50% 0%",
+          "image": "assets/img/hairmuse-nymag.webp",
+          "video": "",
           "alt": "New York Magazine 'Best of New York' feature: The Best Hair Braiders in New York, October 27, 2023",
           "title": "New York Magazine feature",
           "caption": "Earned coverage in New York Magazine's Best of New York, alongside a New York Times feature.",
           "role": "Marketing Consultant, Hairmuse",
-          "link": "work/hairmuse.html"
+          "link": "work/hairmuse.html",
+          "fit": "cover",
+          "position": "50% 0%",
+          "audio": false
         },
         {
-          "type": "video",
-          "src": "assets/video/hairmuse-reels.mp4",
-          "poster": "assets/img/hairmuse-reels-poster.webp",
-          "position": "50% 20%",
+          "image": "assets/img/hairmuse-reels-poster.webp",
+          "video": "assets/video/hairmuse-reels.mp4",
           "alt": "Influencer Instagram Reels featuring Hairmuse braid styles",
           "title": "Influencer partnerships",
           "caption": "Creator content that expanded Hairmuse's reach and credibility.",
           "role": "Content Marketing Manager, Hairmuse",
-          "link": "work/hairmuse.html"
+          "link": "work/hairmuse.html",
+          "fit": "cover",
+          "position": "50% 20%",
+          "audio": false
         },
         {
-          "type": "image",
-          "src": "assets/img/hairmuse-influencer.webp",
+          "image": "assets/img/hairmuse-influencer.webp",
+          "video": "",
           "alt": "Influencer and her daughter in braided styles on a tennis court",
           "title": "Creator collaborations",
           "caption": "Partnership content with creators and their families.",
           "role": "Content Marketing Manager, Hairmuse",
-          "link": "work/hairmuse.html"
+          "link": "work/hairmuse.html",
+          "fit": "cover",
+          "position": "",
+          "audio": false
         }
       ]
     },
@@ -196,34 +221,40 @@
       "name": "Experiential & Events",
       "items": [
         {
-          "type": "image",
-          "src": "assets/img/allentown-booth.webp",
-          "position": "50% 30%",
+          "image": "assets/img/allentown-booth.webp",
+          "video": "",
           "alt": "Allentown team at a branded conference exhibit booth with banners and product samples",
           "title": "Conference exhibit",
           "caption": "A branded exhibit bringing a technical product line to life for conference attendees.",
           "role": "Marketing & Digital Specialist, Allentown",
-          "link": "work/allentown.html"
+          "link": "work/allentown.html",
+          "fit": "cover",
+          "position": "50% 30%",
+          "audio": false
         },
         {
-          "type": "image",
-          "src": "assets/img/allentown-aalas-event.webp",
-          "position": "40% 30%",
+          "image": "assets/img/allentown-aalas-event.webp",
+          "video": "",
           "alt": "Attendee holding an 'Improving Life, it's in my DNA' sign at the Allentown and AALAS Foundation photo wall",
           "title": "Fundraiser photo activation",
           "caption": "An interactive photo wall supporting the AALAS Foundation, shared by attendees on LinkedIn.",
           "role": "Marketing & Digital Specialist, Allentown",
-          "link": "work/allentown.html"
+          "link": "work/allentown.html",
+          "fit": "cover",
+          "position": "40% 30%",
+          "audio": false
         },
         {
-          "type": "image",
-          "src": "assets/img/cpn-identity-collage.webp",
-          "position": "30% 88%",
+          "image": "assets/img/cpn-identity-collage.webp",
+          "video": "",
           "alt": "CPN brand environment with banners, wall graphics, and signage",
           "title": "CPN brand environments",
           "caption": "Banners, wall graphics, and signage extending the national brand into physical spaces.",
           "role": "Marketing & Communications Manager, CPN",
-          "link": "work/cpn.html"
+          "link": "work/cpn.html",
+          "fit": "cover",
+          "position": "30% 88%",
+          "audio": false
         }
       ]
     },
