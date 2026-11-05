@@ -31,6 +31,25 @@
     if (!el.hasAttribute("data-reveal")) el.setAttribute("data-reveal", "fade");
   });
 
+  // Progressive letter reveal: one running index across all marked elements so the title reads in order
+  let letter = 0;
+  document.querySelectorAll("[data-progressive]").forEach((el) => {
+    const words = el.textContent.trim().split(/\s+/);
+    el.innerHTML = words
+      .map((word) => `<span class="pw">${[...word].map((ch) => `<span class="pc" style="--i:${letter++}">${ch}</span>`).join("")}</span>`)
+      .join(" ");
+  });
+
+  // Expertise cards: reveal related case studies
+  document.querySelectorAll(".service-toggle").forEach((btn) => {
+    const list = document.getElementById(btn.getAttribute("aria-controls"));
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") !== "true";
+      btn.setAttribute("aria-expanded", String(open));
+      list.hidden = !open;
+    });
+  });
+
   // Stagger children
   document.querySelectorAll("[data-stagger]").forEach((group) => {
     const step = parseFloat(group.dataset.stagger) || 0.08;
@@ -59,7 +78,7 @@
     requestAnimationFrame(tick);
   };
 
-  const revealables = document.querySelectorAll("[data-reveal], [data-count]");
+  const revealables = document.querySelectorAll("[data-reveal], [data-count], [data-progressive]");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
