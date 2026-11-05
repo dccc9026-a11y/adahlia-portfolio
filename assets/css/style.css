@@ -357,6 +357,13 @@ em, .italic { font-style: italic; }
 .cta { background: var(--burgundy); color: var(--cream); text-align: center; padding: clamp(110px, 14vw, 190px) 0; position: relative; overflow: hidden; }
 .cta h2 { font-size: clamp(52px, 8.4vw, 124px); max-width: 13ch; margin: 0 auto 44px; line-height: 0.98; }
 .cta h2 em { color: #EBC8C8; }
+.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.cta-actions .btn { padding: 16px 28px 16px 24px; gap: 12px; }
+.brand-icon { width: 20px; height: 20px; flex-shrink: 0; }
+.cta-actions .btn:hover svg { transform: none; }
+.brand-icon--gmail { fill: #EA4335; }
+.brand-icon--linkedin { fill: #0A66C2; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .cta-bg { position: absolute; inset: 0; pointer-events: none; opacity: 0.16; }
 .cta-bg span { position: absolute; border-radius: 50%; border: 1.5px solid var(--cream); }
 
