@@ -611,8 +611,6 @@ em, .italic { font-style: italic; }
 /* Case study openers: official logo sized to complement the copy, not dominate it */
 .cs-logo { margin-top: clamp(40px, 5vw, 60px); }
 .cs-logo img { width: min(300px, 68%); height: auto; }
-.cs-mark { margin-top: clamp(40px, 5vw, 64px); background: var(--burgundy); border-radius: calc(var(--radius) + 6px); display: grid; place-items: center; padding: clamp(56px, 9vw, 120px) 24px; }
-.cs-mark img { width: min(520px, 78%); height: auto; }
 
 /* images with transparent or self-contained backgrounds sit straight on the page */
 .media--clear { background: transparent !important; border-radius: 0 !important; }
