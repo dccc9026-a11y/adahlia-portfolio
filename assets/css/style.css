@@ -262,7 +262,6 @@ em, .italic { font-style: italic; }
 /* organization logos: originals, only scaled */
 .case-logo { display: flex; align-items: center; height: 64px; margin: 0 0 16px; }
 .case-logo img { height: 46px; width: auto; max-width: 70%; object-fit: contain; object-position: left center; }
-.case-logo--tile img { height: 64px; width: 64px; max-width: none; border-radius: 10px; }
 .case-tags { font-size: 13px; font-weight: 600; color: var(--cobalt-ink); margin: 0 0 12px; letter-spacing: 0.02em; }
 .case-tags span { color: var(--blush); padding: 0 4px; }
 .case h3 { font-size: clamp(28px, 2.4vw, 36px); line-height: 1.08; margin-bottom: 14px; transition: color .3s; }
