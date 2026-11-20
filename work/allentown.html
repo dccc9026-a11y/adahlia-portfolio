@@ -13,12 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
   <style>
-    .at-cover { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 16px; margin-top: clamp(40px, 5vw, 64px); }
-    .at-cover > div { border-radius: calc(var(--radius) + 6px); overflow: hidden; background: var(--sand-soft); }
-    .at-cover img, .at-cover video { width: 100%; height: 100%; object-fit: cover; }
-    .at-cover .wide { background: #fff; display: grid; place-items: center; }
-    .at-cover .wide video { object-fit: contain; }
-    @media (max-width: 700px) { .at-cover { grid-template-columns: 1fr; } .at-cover > div:first-child { aspect-ratio: 4 / 4.2; } }
     .outcomes .outcome:nth-child(3) { grid-column: span 2; }
     @media (max-width: 640px) { .outcomes .outcome:nth-child(3) { grid-column: span 1; } }
   </style>
@@ -51,9 +45,8 @@
           <span>Digital Strategy</span><span>Paid Advertising</span><span>Lead Generation</span><span>Content Marketing</span>
         </div>
 
-        <div class="at-cover" data-stagger="0.1">
-          <div><img src="../assets/img/allentown-booth.webp" width="1280" height="1668" alt="Allentown team at a branded conference exhibit booth" style="object-position:50% 30%"></div>
-          <div class="wide"><video src="../assets/video/allentown-kpi.mp4" poster="../assets/img/allentown-kpi-poster.webp" muted loop playsinline autoplay data-loop preload="none" aria-label="Animated LinkedIn performance dashboard shown on two monitors"></video></div>
+        <div class="cs-logo" data-reveal>
+          <img src="../assets/img/logo-allentown.webp" width="900" height="239" alt="Allentown logo: Improving Life, it's in our DNA">
         </div>
 
         <div class="glance glance--3" data-stagger="0.08">
@@ -74,10 +67,6 @@
             <p>With limited digital marketing infrastructure and no established paid advertising strategy, there was an opportunity to turn its online presence into a stronger source of business growth.</p>
           </div>
           <p class="pull" data-reveal>The challenge: reach a narrow audience and turn visibility into <em>qualified leads.</em></p>
-          <figure class="figure" data-reveal style="max-width:620px">
-            <div class="media"><img src="../assets/img/allentown-minirack.webp" width="1200" height="1201" loading="lazy" alt="Product marketing graphic for Allentown's Home Cage Monitoring Mini-Rack, highlighting animal well-being, remote monitoring, and automated data collection"></div>
-            <figcaption>Product marketing for a highly technical audience: Home Cage Monitoring Mini-Rack.</figcaption>
-          </figure>
         </div>
       </div>
     </section>
@@ -93,16 +82,9 @@
             <div class="pillar"><span class="n">02</span><h3>Paid Lead Generation</h3><p>Introduced the company's first paid digital advertising campaign, targeting relevant B2B audiences.</p></div>
             <div class="pillar"><span class="n">03</span><h3>Measurement &amp; Optimization</h3><p>Leveraged analytics, reporting, and marketing technology to improve campaign performance and inform future decisions.</p></div>
           </div>
-          <div class="figure-row">
-            <figure class="figure" data-reveal>
-              <div class="media" style="background:#fff"><video src="../assets/video/allentown-strategy.mp4" poster="../assets/img/allentown-strategy-poster.webp" muted loop playsinline autoplay data-loop preload="none" aria-label="Strategy presentation slides cycling: research and planning, social media, and image ad examples"></video></div>
-              <figcaption>Strategy and planning presentation.</figcaption>
-            </figure>
-            <figure class="figure" data-reveal style="--d:.1s">
+          <figure class="figure" data-reveal>
               <div class="media" style="background:#000"><video src="../assets/video/allentown-campaign-workflow.mp4" poster="../assets/img/allentown-campaign-workflow-poster.webp" controls playsinline preload="none" aria-label="Walkthrough of the Digital Campaign Initiatives Workflow presentation"></video></div>
-              <figcaption>Digital Campaign Initiatives Workflow walkthrough (2:25).</figcaption>
-            </figure>
-          </div>
+          </figure>
         </div>
       </div>
     </section>
@@ -114,31 +96,21 @@
           <h2 data-split>From visibility<br><em class="accent">to opportunity.</em></h2>
           <div class="execution">
             <div class="exec-item" data-reveal>
-              <div>
-                <h3>Organic &amp; Social Marketing</h3>
-                <p>Developed targeted content and strengthened the brand's presence across LinkedIn, Instagram, and Twitter.</p>
-                <figure class="figure" style="margin-top:28px">
-                  <div class="media"><img src="../assets/img/allentown-aalas-event.webp" width="1200" height="874" loading="lazy" alt="Attendee at the Allentown and AALAS Foundation fundraiser photo wall holding an 'Improving Life, it's in my DNA' sign"></div>
-                  <figcaption>AALAS Foundation fundraiser activation, shared by attendees on LinkedIn.</figcaption>
-                </figure>
-              </div>
-              <figure class="figure figure--tall">
-                <div class="media" style="background:var(--cream)"><video src="../assets/video/allentown-social.mp4" poster="../assets/img/allentown-social-poster.webp" muted loop playsinline autoplay data-loop preload="none" aria-label="Allentown social posts shown on mobile: product marketing and event marketing"></video></div>
-                <figcaption>Product and event social content on mobile.</figcaption>
+              <div><h3>Organic &amp; Social Marketing</h3><p>Developed targeted content and strengthened the brand's presence across LinkedIn, Instagram, and Twitter.</p></div>
+              <figure class="figure">
+                <div class="media media--clear"><video src="../assets/video/allentown-organic-social.mp4" poster="../assets/img/allentown-organic-social-poster.webp" muted loop playsinline autoplay data-loop preload="none" aria-label="Allentown's LinkedIn company page scrolling on a laptop"></video></div>
               </figure>
             </div>
             <div class="exec-item" data-reveal>
               <div><h3>Paid Advertising</h3><p>Launched the company's first digital advertising campaign, creating a new channel for qualified lead generation.</p></div>
               <figure class="figure">
-                <div class="media" style="background:#fff"><video src="../assets/video/allentown-sentinel-ad.mp4" poster="../assets/img/allentown-sentinel-ad-poster.webp" muted loop playsinline autoplay data-loop preload="none" aria-label="Animated ad for Sentinel Colony Health Monitoring: over 25,000 animal lives saved, higher sensitivity of agent detection, improved animal welfare"></video></div>
-                <figcaption>Animated campaign creative for Sentinel colony health monitoring.</figcaption>
+                <div class="media media--clear"><video src="../assets/video/allentown-paid-ads.mp4" poster="../assets/img/allentown-paid-ads-poster.webp" muted loop playsinline autoplay data-loop preload="none" aria-label="Two Allentown sponsored LinkedIn ads introducing Sentinel colony health monitoring technology"></video></div>
               </figure>
             </div>
             <div class="exec-item" data-reveal>
               <div><h3>Website &amp; Marketing Technology</h3><p>Optimized website content for search and introduced tools to improve marketing efficiency, reporting, and campaign management.</p></div>
-              <figure class="figure figure--tall" style="max-width:520px">
-                <div class="media"><img src="../assets/img/allentown-linkedin-dashboard.webp" width="1398" height="1655" loading="lazy" alt="LinkedIn analytics dashboard showing page engagement rate of 7.31%, post engagement rate of 5.98%, and top posts"></div>
-                <figcaption>Performance reporting dashboard used to guide optimization.</figcaption>
+              <figure class="figure">
+                <div class="media media--clear"><video src="../assets/video/allentown-kpi.mp4" poster="../assets/img/allentown-kpi-poster.webp" muted loop playsinline autoplay data-loop preload="none" aria-label="Animated marketing performance dashboard shown on two monitors"></video></div>
               </figure>
             </div>
           </div>

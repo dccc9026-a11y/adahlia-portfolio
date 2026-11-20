@@ -12,14 +12,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <style>
-    .hm-cover { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: clamp(40px, 5vw, 64px); }
-    .hm-cover > div { border-radius: calc(var(--radius) + 6px); overflow: hidden; aspect-ratio: 4 / 4.4; }
-    .hm-cover .logo-tile { background: #F4DED8; display: grid; place-items: center; }
-    .hm-cover .logo-tile img { width: 82%; }
-    .hm-cover img { width: 100%; height: 100%; object-fit: cover; }
-    @media (max-width: 640px) { .hm-cover { grid-template-columns: 1fr; } .hm-cover > div { aspect-ratio: 4 / 3.4; } }
-  </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -49,9 +41,8 @@
           <span>Content Strategy</span><span>Brand Development</span><span>Influencer Marketing</span><span>Public Relations</span>
         </div>
 
-        <div class="hm-cover" data-stagger="0.1">
-          <div class="logo-tile"><img src="../assets/img/hairmuse-logo.webp" width="1000" height="997" alt="Hairmuse logo with lotus mark"></div>
-          <div><img src="../assets/img/hairmuse-editorial.webp" width="1400" height="1750" alt="Editorial photo of a Hairmuse client with long beaded locs against a draped cream backdrop" style="object-position:50% 25%"></div>
+        <div class="cs-mark" data-reveal>
+          <img src="../assets/img/logo-hairmuse-light.webp" width="1200" height="355" alt="Hairmuse logo with lotus mark">
         </div>
 
         <div class="glance glance--3" data-stagger="0.08">
@@ -89,15 +80,12 @@
               <div class="figure-row figure-row--phones">
                 <figure class="figure">
                   <div class="media media--phone"><video src="../assets/video/hairmuse-process.mp4" poster="../assets/img/hairmuse-process-poster.webp" muted loop playsinline autoplay data-loop preload="none" aria-label="Sped-up video of a Hairmuse stylist taking down a braided style"></video></div>
-                  <figcaption>Behind-the-scenes process content.</figcaption>
                 </figure>
                 <figure class="figure">
                   <div class="media media--phone"><video src="../assets/video/hairmuse-reveal.mp4" poster="../assets/img/hairmuse-reveal-poster.webp" muted loop playsinline autoplay data-loop preload="none" aria-label="Short reveal video of a client's finished knotless braids"></video></div>
-                  <figcaption>Short-form style reveal.</figcaption>
                 </figure>
                 <figure class="figure">
                   <div class="media media--phone"><img src="../assets/img/hairmuse-testimonial.webp" width="1080" height="1080" loading="lazy" alt="Hairmuse branded five-star client testimonial post with a photo of finished braids" style="object-fit:cover;background:#F4DED8"></div>
-                  <figcaption>Branded social-proof templates.</figcaption>
                 </figure>
               </div>
             </div>
@@ -110,15 +98,12 @@
               <div class="figure-row figure-row--phones">
                 <figure class="figure">
                   <div class="media media--phone"><video src="../assets/video/hairmuse-reels.mp4" poster="../assets/img/hairmuse-reels-poster.webp" muted loop playsinline autoplay data-loop preload="none" aria-label="Influencer Instagram Reels featuring Hairmuse braid styles"></video></div>
-                  <figcaption>Influencer Reels featuring Hairmuse styles.</figcaption>
                 </figure>
                 <figure class="figure">
                   <div class="media media--phone"><video src="../assets/video/hairmuse-story.mp4" poster="../assets/img/hairmuse-story-poster.webp" muted loop playsinline autoplay data-loop preload="none" aria-label="Influencer Instagram Story crediting 'Hair @hairmuse'"></video></div>
-                  <figcaption>Creator stories tagging @hairmuse.</figcaption>
                 </figure>
                 <figure class="figure">
                   <div class="media media--phone"><img src="../assets/img/hairmuse-influencer.webp" width="736" height="775" loading="lazy" alt="Influencer and her daughter in braided styles on a tennis court"></div>
-                  <figcaption>Partnership content with creators and their families.</figcaption>
                 </figure>
               </div>
             </div>
@@ -146,7 +131,6 @@
             </div>
             <figure class="figure figure--tall" style="margin:0" data-reveal>
               <div class="media"><img src="../assets/img/hairmuse-nymag.webp" width="1000" height="1224" loading="lazy" alt="New York Magazine 'Best of New York' feature: The Best Hair Braiders in New York, October 27, 2023"></div>
-              <figcaption>New York Magazine, Best of New York, Oct. 2023.</figcaption>
             </figure>
           </div>
         </div>
