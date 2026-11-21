@@ -218,30 +218,19 @@ em, .italic { font-style: italic; }
 }
 .service:nth-child(4), .service:nth-child(5) { grid-column: span 3; }
 .service { transition: background-color .45s var(--ease), border-color .45s, box-shadow .6s var(--ease), color .45s; }
-.service:has(.service-toggle[aria-expanded="true"]) { border-color: rgba(126, 47, 67, 0.35); box-shadow: 0 24px 50px -38px rgba(47, 36, 31, 0.4); }
 /* hover: burgundy card, white lettering; returns to normal when the cursor leaves */
 .service:hover { background: var(--burgundy); border-color: var(--burgundy); color: #fff; box-shadow: 0 30px 60px -36px rgba(100, 36, 58, 0.6); }
-.service:hover .service-num, .service:hover > p, .service:hover > p span,
-.service:hover .service-toggle, .service:hover .service-links a { color: #fff; }
-.service:hover .service-links, .service:hover .service-links li { border-color: rgba(255, 255, 255, 0.28); }
-.service-num, .service > p, .service > p span, .service-toggle, .service-links a { transition: color .45s var(--ease); }
+.service:hover .service-num, .service:hover > p, .service:hover > p span, .service:hover .service-cta { color: #fff; }
+.service-num, .service > p, .service > p span, .service-cta { transition: color .45s var(--ease); }
+/* each card links to Selected Work */
+a.service { text-decoration: none; color: inherit; }
+.service-cta { margin-top: auto; display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; padding: 10px 0 0; font: 700 14px/1 var(--sans); color: var(--burgundy); letter-spacing: 0.02em; }
+.service-cta svg { width: 15px; height: 15px; transition: transform .4s var(--ease); }
+.service:hover .service-cta svg { transform: translateX(5px); }
 .service-num { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--burgundy); display: block; margin-bottom: 44px; }
 .service h3 { margin-bottom: 12px; }
 .service > p { margin: 0 0 26px; font-size: 15px; color: var(--espresso-soft); line-height: 1.75; text-wrap: wrap; }
 .service > p span { color: var(--burgundy); padding: 0 2px; }
-.service-toggle {
-  margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 10px;
-  padding: 10px 0; background: none; border: 0; cursor: pointer;
-  font: 700 14px/1 var(--sans); color: var(--burgundy); letter-spacing: 0.02em;
-}
-.service-toggle .plus { position: relative; width: 12px; height: 12px; }
-.service-toggle .plus::before, .service-toggle .plus::after { content: ""; position: absolute; left: 0; top: 5.25px; width: 12px; height: 1.5px; background: currentColor; transition: transform .4s var(--ease); }
-.service-toggle .plus::after { transform: rotate(90deg); }
-.service-toggle[aria-expanded="true"] .plus::after { transform: rotate(0deg); }
-.service-links { list-style: none; margin: 8px 0 0; padding: 6px 0 0; border-top: 1px solid var(--line); }
-.service-links li { border-bottom: 1px solid var(--line); }
-.service-links a { display: block; padding: 12px 0; font-size: 14.5px; font-weight: 600; text-decoration: none; transition: color .3s; }
-.service-links a:hover { color: var(--burgundy); }
 @media (max-width: 980px) {
   .services { grid-template-columns: repeat(2, 1fr); }
   .service, .service:nth-child(4), .service:nth-child(5) { grid-column: span 1; }
@@ -256,12 +245,15 @@ em, .italic { font-style: italic; }
 /* ---------- Selected work ---------- */
 .cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 3.4vw, 52px); align-items: start; }
 .case { display: flex; flex-direction: column; text-decoration: none; }
-.case-media { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3.3; background: var(--sand-soft); margin-bottom: 26px; }
-.case-media img, .case-media video { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
-.case:hover .case-media img, .case:hover .case-media video { transform: scale(1.04); }
-/* organization logos: originals, only scaled */
-.case-logo { display: flex; align-items: center; height: 64px; margin: 0 0 16px; }
-.case-logo img { height: 46px; width: auto; max-width: 70%; object-fit: contain; object-position: left center; }
+/* logo panel: the organization's original logo is the card's visual */
+.case-logo {
+  display: grid; place-items: center; aspect-ratio: 16 / 10; margin-bottom: 26px; padding: 12%;
+  border-radius: var(--radius); background: #FBF8F3; border: 1px solid var(--line);
+  transition: border-color .4s, box-shadow .6s var(--ease);
+}
+.case-logo img { width: 100%; height: 100%; max-height: 150px; object-fit: contain; transition: transform 1.2s var(--ease); }
+.case:hover .case-logo { border-color: rgba(126, 47, 67, 0.35); box-shadow: 0 24px 50px -38px rgba(47, 36, 31, 0.4); }
+.case:hover .case-logo img { transform: scale(1.04); }
 .case-tags { font-size: 13px; font-weight: 600; color: var(--cobalt-ink); margin: 0 0 12px; letter-spacing: 0.02em; }
 .case-tags span { color: var(--blush); padding: 0 4px; }
 .case h3 { font-size: clamp(28px, 2.4vw, 36px); line-height: 1.08; margin-bottom: 14px; transition: color .3s; }
@@ -413,10 +405,11 @@ em, .italic { font-style: italic; }
 /* ---------- Lightbox: the work itself, nothing else ---------- */
 .lightbox { width: min(1240px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); padding: 0; border: 0; border-radius: calc(var(--radius) + 4px); background: var(--cream); color: var(--espresso); box-shadow: 0 40px 120px -30px rgba(20, 12, 10, 0.6); overflow: hidden; }
 .lightbox::backdrop { background: rgba(35, 24, 22, 0.78); backdrop-filter: blur(4px); }
-.lightbox[open] { display: flex; flex-direction: column; animation: lb-in .45s var(--ease); }
+.lightbox[open] { display: block; animation: lb-in .45s var(--ease); }
 @keyframes lb-in { from { opacity: 0; transform: translateY(12px) scale(0.985); } }
-.lb-media { display: grid; place-items: center; background: var(--sand-soft); min-height: 0; flex: 1; }
-.lb-media img, .lb-media video { width: 100%; height: auto; max-height: calc(100dvh - 32px - 78px); object-fit: contain; }
+/* plain block layout: Safari collapses a flex:1 media area to zero height inside a dialog */
+.lb-media { display: block; background: var(--sand-soft); line-height: 0; }
+.lb-media img, .lb-media video { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: calc(100vh - 32px - 78px); max-height: calc(100dvh - 32px - 78px); }
 .lb-nav { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 16px; }
 .lb-count { margin: 0; min-width: 56px; text-align: center; font-size: 14px; font-weight: 600; color: var(--espresso-soft); }
 .lb-nav button, .lb-close {

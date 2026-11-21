@@ -40,16 +40,6 @@
       .join(" ");
   });
 
-  // Expertise cards: reveal related case studies
-  document.querySelectorAll(".service-toggle").forEach((btn) => {
-    const list = document.getElementById(btn.getAttribute("aria-controls"));
-    btn.addEventListener("click", () => {
-      const open = btn.getAttribute("aria-expanded") !== "true";
-      btn.setAttribute("aria-expanded", String(open));
-      list.hidden = !open;
-    });
-  });
-
   // Stagger children
   document.querySelectorAll("[data-stagger]").forEach((group) => {
     const step = parseFloat(group.dataset.stagger) || 0.08;
